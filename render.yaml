@@ -1,11 +1,10 @@
 services:
   - type: web
-    name: greencradle-backend
+    name: green-palan-backend
     env: python
+    plan: free
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn greencradle.wsgi:application"
+    startCommand: "python manage.py runserver 0.0.0.0:8000"
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: greencradle.settings
-      - key: PYTHON_VERSION
-        value: 3.11
